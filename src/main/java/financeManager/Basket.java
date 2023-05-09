@@ -15,9 +15,10 @@ public class Basket {
                     titles.get(new Random().nextInt(titles.size())),
                     LocalDate.now().minus(Period.ofDays((new Random().nextInt(365 * 70)))),
                     sums.get(new Random().nextInt(sums.size()))));
-            System.out.println("В вашей корзине:");
-            System.out.println(categoriesList);
+
         }
+        System.out.println("В вашей корзине:");
+        System.out.println(categoriesList);
         return categoriesList;
     }
 }
