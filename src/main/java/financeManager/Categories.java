@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Categories {
@@ -32,7 +33,7 @@ public class Categories {
     }
 
     public void setDate(String date) {
-        this.date = String.valueOf(LocalDate.parse(dateFormat.format(date)));
+        this.date = String.valueOf(LocalDate.parse(date,DateTimeFormatter.ofPattern("yyyy.MM.dd")));
     }
 
     public void setSum(int sum) {
