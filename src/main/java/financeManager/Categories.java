@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.*;
 
 public class Categories {
@@ -21,10 +20,10 @@ public class Categories {
     Calendar calendar = Calendar.getInstance();
 
 
-    public Categories(String title, LocalDate date, int sum) {
+    public Categories(String title, String date, int sum) {
         this.title = title;
         this.sum = sum;
-        this.date = dateFormat.format(calendar.getTime());
+        this.date = date;
 
     }
 
@@ -33,7 +32,7 @@ public class Categories {
     }
 
     public void setDate(String date) {
-        this.date = date;
+        this.date = String.valueOf(LocalDate.parse(dateFormat.format(date)));
     }
 
     public void setSum(int sum) {
@@ -45,13 +44,12 @@ public class Categories {
     }
 
     public String getDate() {
-        return date;
+        return date.toString();
     }
 
     public int getSum() {
         return sum;
     }
-
 
     @Override
     public String toString() {
@@ -61,6 +59,5 @@ public class Categories {
                 ", sum=" + sum +
                 '}';
     }
-
 }
 
